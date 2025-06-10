@@ -8,10 +8,12 @@ public class ChatBot {
     static Map<String, String> baseConocimiento = new HashMap<>();
 
     public static void main(String[] args) {
-        // Inicializamos la base de respuesta del chatBot
-        //inicializarBase();
+
         //Carga el archivo de conocimiento
         cargarConocimiento();
+
+
+
         // Creamos nuevo objeto para la lectura por teclado
         Scanner sc = new Scanner(System.in);
         // Mensaje al usuario
@@ -20,6 +22,7 @@ public class ChatBot {
         boolean verdadero = true;
         // Bucle para repetir la solicitud de entrada del usuario
         while (verdadero) {
+
         // Solicitamos entrada al usuario
             System.out.println("\nTú: ");
         // Leemos la que teclea el usuario
@@ -29,29 +32,6 @@ public class ChatBot {
                 System.out.println("Hasta pronto!!!");
                 break;
             }
-
-            /* if (entrada.equals("hola")) {
-                System.out.println(baseConocimiento.get(entrada));
-            } else if (entrada.equals("gracias")) {
-                System.out.println(baseConocimiento.get(entrada));
-            } else if (entrada.equals("adios")) {
-                System.out.println(baseConocimiento.get(entrada));
-            } else if (entrada.equals("java")) {
-                System.out.println(baseConocimiento.get(entrada));
-            }else {
-                System.out.println("lo siento no entiendo tu pregunta");
-            }*/
-
-
-            // Uso de la condicional switch
-            /*switch (entrada) {
-                case "hola","java","adios","gracias":
-                    System.out.println(baseConocimiento.get(entrada));
-                    break;
-                default:
-                    System.out.println("lo siento no entiendo tu pregunta");
-
-            }*/
 
             boolean encontrada = false;
 
@@ -75,6 +55,7 @@ public class ChatBot {
                 System.out.println("¡Graciaas! He aprendido algo nuevo.");
                 System.out.println("¡Ahora puedes probar escribiendo de nuevo!");
             }
+
         }
 
     }
@@ -104,6 +85,20 @@ public class ChatBot {
             System.out.println("No se pudo agregar la frase nueva");
         }
 
+    }
+
+    //Método registrar conversación
+    public static void registrarConversacion(String entrada, String respuesta){
+        try(BufferedWriter escritor = new BufferedWriter(new FileWriter("registro_conversaciones.txt", true))) {
+            escritor.write("Usuario: " + entrada);
+            escritor.newLine();
+            escritor.write("Bot: " + respuesta);
+            escritor.newLine();
+            escritor.write("------");
+            escritor.newLine();
+        }catch (IOException e){
+            System.out.println("No se pudo guardar la conversación. ");
+        }
     }
 }
 
