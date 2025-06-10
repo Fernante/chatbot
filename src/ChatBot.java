@@ -61,6 +61,7 @@ public class ChatBot {
     }
 
     static void cargarConocimiento(){
+
         try(BufferedReader lector = new BufferedReader(new FileReader("conocimiento.txt"))){
 
             String linea;
@@ -77,13 +78,18 @@ public class ChatBot {
 
     }
     static void guardarConocimiento(String clave, String frase){
-        try(BufferedWriter escritor = new BufferedWriter(new FileWriter("conocimiento.txt",true))){
-            escritor.newLine();
-            escritor.write(clave+"="+frase);
+        File archivo = new File("conocimiento.txt");
+        boolean archivoVacio = archivo.length() == 0;
 
+        try(BufferedWriter escritor = new BufferedWriter(new FileWriter("conocimiento.txt",true))){
+           if (!archivoVacio){
+               escritor.newLine();
+           }
+            escritor.write(clave+"="+frase);
         }catch (Exception e){
             System.out.println("No se pudo agregar la frase nueva");
         }
+
 
     }
 

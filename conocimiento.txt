@@ -96,3 +96,5 @@ mentira=La mentira tiene patas cortas
 respeto=El respeto construye puentes
 gratitud=La gratitud abre caminos
 perdon=Perdonar libera el alma
+noexiste=no existe
+no existe=noexiste
