@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class ChatBot {
 
     static Map<String, String> baseConocimiento = new HashMap<>();
-
+    static String respuesta;
     public static void main(String[] args) {
 
         //Carga el archivo de conocimiento
@@ -40,7 +40,7 @@ public class ChatBot {
                 if (NLPUtils.contienePalabraClave(entrada, clave)) {
                     encontrada = true;
 
-                    String respuesta = baseConocimiento.get(clave);
+                    respuesta = baseConocimiento.get(clave);
                     System.out.println(respuesta);
                     break;
                 }
@@ -55,6 +55,8 @@ public class ChatBot {
                 System.out.println("¡Graciaas! He aprendido algo nuevo.");
                 System.out.println("¡Ahora puedes probar escribiendo de nuevo!");
             }
+            System.out.println(respuesta);
+            registrarConversacion(entrada,respuesta);
 
         }
 

@@ -98,3 +98,4 @@ gratitud=La gratitud abre caminos
 perdon=Perdonar libera el alma
 noexiste=no existe
 no existe=noexiste
+bye=bye bye

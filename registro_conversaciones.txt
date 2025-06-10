@@ -1,0 +1,33 @@
+Usuario: hola
+Bot: null
+------
+Usuario: felicidad
+Bot: null
+------
+Usuario: 
+Bot: null
+------
+Usuario: hola
+Bot: null
+------
+Usuario: felicidad
+Bot: null
+------
+Usuario: hola
+Bot: null
+------
+Usuario: hola
+Bot: null
+------
+Usuario: hola
+Bot: ¡Hola! Qué gusto saludarte
+------
+Usuario: hola
+Bot: ¡Hola! Qué gusto saludarte
+------
+Usuario: bye
+Bot: ¡Hola! Qué gusto saludarte
+------
+Usuario: bye
+Bot: bye bye
+------
